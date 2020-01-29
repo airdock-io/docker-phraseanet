@@ -1,0 +1,98 @@
+version: '3'
+
+services:
+
+  nginx:
+    image: nginx:alpine
+    links:
+      - php
+    volumes:
+      - phraseanet:/var/www/app
+      - ${PWD}/.docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+
+  php:
+    # image: phraseanet:latest
+    image: phraseanet.slim:latest
+    volumes:
+      - phraseanet:/var/www/app
+      - ${PWD}/.docker/php/phrasea.ini:/usr/local/etc/php/conf.d/phrasea.ini
+      - ${PWD}/.docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mariadb:latest
+    restart: always
+    volumes:
+      - ${PWD}/.data:/var/lib/mysql
+      - ${PWD}/.docker/mysql/strict.cnf:/etc/mysql/conf.d/strict.cnf
+      - ${PWD}/.docker/mysql:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: phrasea
+      MYSQL_DATABASE: phraseanet
+      MYSQL_USER: canal
+      MYSQL_PASSWORD: canal
+
+  mysql_admin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: phrasea
+    ports:
+      - 9003:80
+
+  elastic:
+    image: elasticsearch:2.4-alpine
+    environment:
+      discovery.type: single-node
+      # es.http.port: 9200
+      # es.http.cors.allow-origin: http://localhost:9005,http://127.0.0.1:1358,http://dejavu:1358
+      # es.http.cors.enabled: "true"
+      # es.http.cors.allow-headers : X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
+      # es.http.cors.allow-credentials: "true"
+      # ELASTIC_PASSWORD: changeme
+    command: elasticsearch -Des.http.port=9200 -Des.http.cors.allow-origin="*" -Des.http.cors.enabled=true -Des.http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization -Des.http.cors.allow-credentials=true -Des.http.cors.allowed-methods="*"
+    entrypoint: /docker-entrypoint.d/docker-entrypoint.sh
+    volumes:
+      - ${PWD}/.esdata:/usr/share/elasticsearch/data
+      - ${PWD}/.docker/elastic/entrypoint.sh:/docker-entrypoint.d/docker-entrypoint.sh
+  
+  smtp:
+    image: mailhog/mailhog
+    ports:
+      - 8025:8025
+    environment:
+      MH_HOSTNAME": smtp
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: /docker-volumes.d/mails
+    volumes:
+      - ${PWD}/.mails:/docker-volumes.d/mails
+  
+  dejavu:
+    image: appbaseio/dejavu:latest
+    ports:
+      - 9005:1358
+  
+  elastichq:
+    image: elastichq/elasticsearch-hq
+    ports:
+      - 9010:5000
+  
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+  
+  rabbit:
+    image: rabbitmq:latest
+    ports:
+      - 5672:5672
+
+networks:
+  default: {}
+
+volumes:
+  phraseanet:

@@ -1,0 +1,90 @@
+process:
+  php-fpm:
+    running: true
+file:
+  /var/www/app/config/configuration.yml:
+    exists: true
+    mode: "0777"
+  /usr/local/bin/phrasea-entrypoint:
+    exists: true
+    mode: "0775"
+  /usr/local/bin/phrasea-init:
+    exists: true
+    mode: "0775"
+  /usr/local/bin/docker-php-entrypoint:
+    exists: true
+    mode: "0775"
+  /var/www/app/logs:
+    exists: true
+    mode: "0777"
+  /var/www/app/cache:
+    exists: true
+    mode: "0777"
+  /var/www/app/config:
+    exists: true
+    mode: "0777"
+  /var/www/app/tmp:
+    exists: true
+    mode: "0777"
+  /var/www/app/datas:
+    exists: true
+    mode: "0777"
+  /var/www/app/www/custom:
+    exists: true
+    mode: "0777"
+package:
+  wait-for-it:
+    installed: true
+  apt-transport-https:
+    installed: true
+  ca-certificates:
+    installed: true
+  gnupg2:
+    installed: true
+  zlib1g-dev:
+    installed: true
+  git:
+    installed: true
+  ghostscript:
+    installed: true
+  gpac:
+    installed: true
+  imagemagick:
+    installed: true
+  libav-tools:
+    installed: true
+  libfreetype6-dev:
+    installed: true
+  libicu-dev:
+    installed: true
+  libjpeg62-turbo-dev:
+    installed: true
+  libmagickwand-dev:
+    installed: true
+  libmcrypt-dev:
+    installed: true
+  libpng-dev:
+    installed: true
+  librabbitmq-dev:
+    installed: true
+  libssl-dev:
+    installed: true
+  # libxslt-dev:
+  #   installed: true
+  libzmq3-dev:
+    installed: true
+  locales:
+    installed: true
+  mcrypt:
+    installed: true
+  swftools:
+    installed: true
+  unoconv:
+    installed: true
+  unzip:
+    installed: true
+  xpdf:
+    installed: true
+port:
+  tcp6:9000:
+    listening: true

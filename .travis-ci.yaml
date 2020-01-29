@@ -1,0 +1,23 @@
+services:
+  - docker
+
+jobs:
+  include:
+  - stage: Test Dockerfile
+    script:
+      - docker run -v ${PWD}/Dockerfile:/Dockerfile replicated/dockerfilelint /Dockerfile
+      - docker run -it --rm -v "${PWD}/Dockerfile":/Dockerfile:ro redcoolbeans/dockerlint
+      
+  - stage: Build
+    script:
+      - docker build --tag phraseanet:ci .
+
+  - stage: Test Image
+    script:
+      - CI=true dive --ci-config=.dive.yaml phraseanet:ci
+      - GOSS_SLEEP=20 dgoss run -p 9000:9000 -e WAITFORIT_TIMEOUT=5 phraseanet:ci
+      - container-structure-test test --image phraseanet:latest --config cst.yaml
+  # WIP : Docker slim verifications
+  # - stage: Build Slim Image
+  #   script: 
+  #     - docker-slim build --include-path /usr/local/bin phraseanet:latest

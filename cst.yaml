@@ -1,0 +1,13 @@
+schemaVersion: 2.0.0
+metadataTest:
+  env:
+    - key: MYSQL_HOST
+      value: mysql
+    - key: ELASTIC_HOST
+      value: elastic
+    - key: WAITFORIT_TIMEOUT
+      value: 120 
+  exposedPorts: ["9000"]
+  # entrypoint: []
+  # cmd: ["/bin/bash"]
+  workdir: "/var/www/app"
