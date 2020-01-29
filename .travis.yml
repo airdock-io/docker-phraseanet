@@ -1,3 +1,5 @@
+language: generic
+
 services:
   - docker
 
@@ -5,7 +7,7 @@ jobs:
   include:
   - stage: Test Dockerfile
     script:
-      - docker run -v ${PWD}/Dockerfile:/Dockerfile replicated/dockerfilelint /Dockerfile
+      - docker run -v ${PWD}/Dockerfile:/Dockerfile -v ${PWD}/.dockerfilelintrc:/.dockerfilelintrc replicated/dockerfilelint /Dockerfile
       - docker run -it --rm -v "${PWD}/Dockerfile":/Dockerfile:ro redcoolbeans/dockerlint
       
   - stage: Build

@@ -1,4 +1,4 @@
-FROM php:7.0-fpm as base:php
+FROM php:7.0-fpm as base
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -59,7 +59,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends bzip2 git \
     && npm run build \
     && rm -rf /var/lib/apt/lists/*
 
-FROM base:php
+FROM base
 COPY --from=npm /app /var/www/app
 WORKDIR /var/www/app
 COPY .docker/php/configuration.yml config/configuration.yml
