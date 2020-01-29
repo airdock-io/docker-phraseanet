@@ -26,8 +26,8 @@ docker_process_init_files /docker-entrypoint-init.d/*
 export MYSQL_STATUS=false
 export ELASTIC_STATUS=false
 echo "Waiting for DB" >> /dev/stdout
-wait-for-it -t ${WAITFORIT_TIMEOUT} ${MYSQL_HOST}:3306 --strict -- MYSQL_STATUS=true
-wait-for-it -t ${WAITFORIT_TIMEOUT} ${ELASTIC_HOST}:9200 --strict -- ELASTIC_STATUS=true
+wait-for-it -t ${WAITFORIT_TIMEOUT} ${MYSQL_HOST}:3306 --strict -- env MYSQL_STATUS=true
+wait-for-it -t ${WAITFORIT_TIMEOUT} ${ELASTIC_HOST}:9200 --strict -- env ELASTIC_STATUS=true
 
 if [ "$MYSQL_STATUS" = true ] && [ "$ELASTIC_STATUS" = true ]
 then
