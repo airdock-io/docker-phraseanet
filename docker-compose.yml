@@ -13,8 +13,7 @@ services:
       - 80:80
 
   php:
-    # image: phraseanet:latest
-    image: phraseanet.slim:latest
+    image: airdock/phraseanet:latest
     volumes:
       - phraseanet:/var/www/app
       - ${PWD}/.docker/php/phrasea.ini:/usr/local/etc/php/conf.d/phrasea.ini

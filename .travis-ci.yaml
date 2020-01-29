@@ -15,6 +15,12 @@ jobs:
   - stage: Test Image
     script:
       - CI=true dive --ci-config=.dive.yaml phraseanet:ci
+      # - docker run --rm -it \
+      # -v /var/run/docker.sock:/var/run/docker.sock \
+      # -v  "$(pwd)":"$(pwd)" \
+      # -w "$(pwd)" \
+      # -v "$HOME/.dive.yaml":"$HOME/.dive.yaml" \
+      # wagoodman/dive:latest build -t <some-tag> .
       - GOSS_SLEEP=20 dgoss run -p 9000:9000 -e WAITFORIT_TIMEOUT=5 phraseanet:ci
       - container-structure-test test --image phraseanet:latest --config cst.yaml
   # WIP : Docker slim verifications
