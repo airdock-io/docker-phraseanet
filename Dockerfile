@@ -52,7 +52,7 @@ RUN composer install --ignore-platform-reqs
 FROM node:dubnium-stretch-slim as npm
 WORKDIR /app
 COPY --from=composer /app .
-RUN apt-get update && apt-get install -y --no-install-recommends bzip2 git \
+RUN apt-get update && apt-get install -y --no-install-recommends bzip2 git ca-certificates \
     && echo '{ "allow_root": true }' > /root/.bowerrc \
     && npm install \
     && npm run postinstall \
