@@ -1,4 +1,4 @@
-FROM php:7.0-fpm as base
+FROM php:7.0-fpm as base:php
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -45,20 +45,21 @@ RUN git clone --branch ${PHRASEA_VERSION} https://github.com/alchemy-fr/Phrasean
     && cd app \
     && chmod -R 777 logs cache config tmp www/custom datas
 
-FROM composer:latest as composer
+FROM composer:1 as composer
 COPY --from=base /var/www/app .
 RUN composer install --ignore-platform-reqs
 
 FROM node:dubnium-stretch-slim as npm
 WORKDIR /app
 COPY --from=composer /app .
-RUN apt-get update && apt-get install -y bzip2 git \
+RUN apt-get update && apt-get install -y --no-install-recommends bzip2 git \
     && echo '{ "allow_root": true }' > /root/.bowerrc \
     && npm install \
     && npm run postinstall \
-    && npm run build
+    && npm run build \
+    && rm -rf /var/lib/apt/lists/*
 
-FROM base
+FROM base:php
 COPY --from=npm /app /var/www/app
 WORKDIR /var/www/app
 COPY .docker/php/configuration.yml config/configuration.yml
