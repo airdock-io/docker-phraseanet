@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 docker_process_init_files() {
 	echo
@@ -23,13 +23,14 @@ docker_process_init_files() {
 }
 docker_process_init_files /docker-entrypoint-init.d/*
 
-echo "MYSQL_STATUS=pending" >> .phrasea_init.env
-echo "ELASTIC_STATUS=pending" >> .phrasea_init.env
+echo "MYSQL_STATUS=false" >> .phrasea_init.env
+echo "ELASTIC_STATUS=false" >> .phrasea_init.env
 echo "Waiting for DB" >> /dev/stdout
-wait-for-it -t ${WAITFORIT_TIMEOUT} ${MYSQL_HOST}:3306 --strict -- sed -i 's/MYSQL_STATUS=pending/MYSQL_STATUS=up/g' .phrasea_init.env
-wait-for-it -t ${WAITFORIT_TIMEOUT} ${ELASTIC_HOST}:9200 --strict -- sed -i 's/ELASTIC_STATUS=pending/ELASTIC_STATUS=up/g' .phrasea_init.env
+wait-for-it -t ${WAITFORIT_TIMEOUT} ${MYSQL_HOST}:3306 --strict -- sed -i 's/MYSQL_STATUS=false/MYSQL_STATUS=true/g' .phrasea_init.env
+wait-for-it -t ${WAITFORIT_TIMEOUT} ${ELASTIC_HOST}:9200 --strict -- sed -i 's/ELASTIC_STATUS=false/ELASTIC_STATUS=true/g' .phrasea_init.env
 
-. .phrasea_init.env && rm -rf .phrasea_init.env
+chmod +x .phrasea_init.env
+source .phrasea_init.env && rm -rf .phrasea_init.env
 
 if [ "$MYSQL_STATUS" = true ] && [ "$ELASTIC_STATUS" = true ]
 then

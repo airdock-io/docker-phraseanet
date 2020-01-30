@@ -8,23 +8,27 @@ jobs:
   - stage: Test Dockerfile
     script:
       - docker run -v ${PWD}/Dockerfile:/Dockerfile -v ${PWD}/.dockerfilelintrc:/.dockerfilelintrc replicated/dockerfilelint /Dockerfile
-      - docker run -it --rm -v "${PWD}/Dockerfile":/Dockerfile:ro redcoolbeans/dockerlint
-      
-  - stage: Build
-    script:
-      - docker build --tag phraseanet:ci .
+      - docker run -it --rm -v "${PWD}/Dockerfile":/Dockerfile:ro redcoolbeans/dockerlint      
 
   - stage: Test Image
     script:
-      - CI=true dive --ci-config=.dive.yaml phraseanet:ci
-      # - docker run --rm -it \
-      # -v /var/run/docker.sock:/var/run/docker.sock \
-      # -v  "$(pwd)":"$(pwd)" \
-      # -w "$(pwd)" \
-      # -v "$HOME/.dive.yaml":"$HOME/.dive.yaml" \
-      # wagoodman/dive:latest build -t <some-tag> .
-      - GOSS_SLEEP=20 dgoss run -p 9000:9000 -e WAITFORIT_TIMEOUT=5 phraseanet:ci
-      - container-structure-test test --image phraseanet:latest --config cst.yaml
+      - docker build --tag phraseanet:ci .
+      # WIP: dockerize commands
+      # - CI=true dive --ci-config=.dive.yaml phraseanet:ci
+      # # - docker run --rm -it \
+      # # -v /var/run/docker.sock:/var/run/docker.sock \
+      # # -v  "$(pwd)":"$(pwd)" \
+      # # -w "$(pwd)" \
+      # # -v "$HOME/.dive.yaml":"$HOME/.dive.yaml" \
+      # # wagoodman/dive:latest build -t <some-tag> .
+      # - GOSS_SLEEP=20 dgoss run -p 9000:9000 -e WAITFORIT_TIMEOUT=5 phraseanet:ci
+      # - container-structure-test test --image phraseanet:ci --config cst.yaml
+      # - docker run -i --rm \
+      #   -v /var/run/docker.sock:/var/run/docker.sock \
+      #   -v ${PWD}:/test zemanlx/container-structure-test:v1.8.0-alpine \
+      #   test \
+      #   --image zemanlx/container-structure-test:v1.8.0-alpine \
+      #   --config /test/structure-tests.yaml
   # WIP : Docker slim verifications
   # - stage: Build Slim Image
   #   script: 
