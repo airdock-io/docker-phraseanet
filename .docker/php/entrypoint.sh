@@ -29,7 +29,7 @@ echo "Waiting for DB" >> /dev/stdout
 wait-for-it -t ${WAITFORIT_TIMEOUT} ${MYSQL_HOST}:3306 --strict -- sed -i 's/MYSQL_STATUS=pending/MYSQL_STATUS=up/g' .phrasea_init.env
 wait-for-it -t ${WAITFORIT_TIMEOUT} ${ELASTIC_HOST}:9200 --strict -- sed -i 's/ELASTIC_STATUS=pending/ELASTIC_STATUS=up/g' .phrasea_init.env
 
-source .phrasea_init.env && rm -rf .phrasea_init.env
+. .phrasea_init.env && rm -rf .phrasea_init.env
 
 if [ "$MYSQL_STATUS" = true ] && [ "$ELASTIC_STATUS" = true ]
 then
