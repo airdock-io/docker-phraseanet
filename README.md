@@ -49,6 +49,22 @@ Elasticsearch is in version 2.1, 2.2, 2.3 or 2.4 (mandatory), this version is no
 ## Database (MySQL)
 Phraseanet comes bundled with two databses: phrasea and phrasea_data. You can find schemas imported in *.docker/mysql/{db_name}.sql*
 
+## Environment variables
+Some of these vars are defined in the Dockerfile and others are not. Vars used by the entrypoint and command should be defined in dockerfile, vars relative to the phrasea php app are defined (if not in compose *environment* section) in entrypoint with a default value.
+
+| Var                     | Default Value |
+|-------------------------|---------------|
+| WAITFORIT_TIMEOUT       | 120           |
+| MYSQL_HOST              | mysql         |
+| ELASTIC_HOST            | elastic       |
+| MYSQL_USER              | root          |
+| MYSQL_PWD               | phrasea       |
+| MYSQL_DB_NAME           | phrasea       |
+| SMTP_HOST               | smtp          |
+| SMTP_USER               | null          |
+| SMTP_PWD                | null          |
+
+WAITFORIT_TIMEOUT is the value passed to wait-for-it.sh, for more information see [wait-for-it](https://github.com/vishnubob/wait-for-it)
 
 ## Docker image as standalone
 The image itself provided does not have any config file in it so you will have to mount them in it.

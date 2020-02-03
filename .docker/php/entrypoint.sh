@@ -32,6 +32,17 @@ wait-for-it -t ${WAITFORIT_TIMEOUT} ${ELASTIC_HOST}:9200 --strict -- sed -i 's/E
 chmod +x .phrasea_init.env
 source .phrasea_init.env && rm -rf .phrasea_init.env
 
+# Set optional env Vars
+echo "Setting optional env vars" >> /dev/stdout
+export MYSQL_USER=${MYSQL_USER:=root}
+export MYSQL_PWD=${MYSQL_PWD:=phrasea}
+export MYSQL_DB_NAME=${MYSQL_DB_NAME:=phrasea}
+export SMTP_HOST=${SMTP_HOST:=smtp}
+export SMTP_USER=${SMTP_USER:=null}
+export SMTP_PWD=${SMTP_PWD:=null}
+envsubst < "/var/www/app/config/configuration.sample.yml" > "/var/www/app/config/configuration.yml"
+
+
 if [ "$MYSQL_STATUS" = true ] && [ "$ELASTIC_STATUS" = true ]
 then
   echo "Initialising Phrasea Configuration and Proxies" >> /dev/stdout

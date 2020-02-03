@@ -3,6 +3,7 @@ FROM php:7.0-fpm as base
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         wait-for-it \
+        gettext-base \
         apt-transport-https \
         ca-certificates \
         gnupg2 \
@@ -62,7 +63,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends bzip2 git ca-ce
 FROM base
 COPY --from=npm /app /var/www/app
 WORKDIR /var/www/app
-COPY .docker/php/configuration.yml config/configuration.yml
+COPY .docker/php/configuration.yml config/configuration.sample.yml
 COPY .docker/php/entrypoint.sh /usr/local/bin/phrasea-entrypoint
 COPY .docker/php/phrasea-init.sh /usr/local/bin/phrasea-init
 RUN chmod +x /usr/local/bin/phrasea-entrypoint \

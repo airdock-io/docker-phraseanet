@@ -47,11 +47,6 @@ services:
     image: elasticsearch:2.4-alpine
     environment:
       discovery.type: single-node
-      # es.http.port: 9200
-      # es.http.cors.allow-origin: http://localhost:9005,http://127.0.0.1:1358,http://dejavu:1358
-      # es.http.cors.enabled: "true"
-      # es.http.cors.allow-headers : X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
-      # es.http.cors.allow-credentials: "true"
       # ELASTIC_PASSWORD: changeme
     command: elasticsearch -Des.http.port=9200 -Des.http.cors.allow-origin="*" -Des.http.cors.enabled=true -Des.http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization -Des.http.cors.allow-credentials=true -Des.http.cors.allowed-methods="*"
     entrypoint: /docker-entrypoint.d/docker-entrypoint.sh

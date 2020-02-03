@@ -7,11 +7,11 @@ main:
     key: OUPk1dEFZI5mDBdF
     api_require_ssl: true
     database:
-        host: mysql
+        host: ${MYSQL_HOST}
         port: '3306'
-        user: root
-        password: phrasea
-        dbname: phrasea
+        user: ${MYSQL_USER}
+        password: ${MYSQL_PWD}
+        dbname: ${MYSQL_DB_NAME}
         driver: pdo_mysql
         charset: UTF8
     database-test:
@@ -24,7 +24,7 @@ main:
     search-engine:
         type: elasticsearch
         options:
-            host: elastic
+            host: ${ELASTIC_HOST}
             port: 9200
             index: ''
             shards: 5
@@ -321,11 +321,11 @@ registry:
         prefix: null
         smtp-enabled: true
         smtp-auth-enabled: false
-        smtp-host: smtp
+        smtp-host: ${SMTP_HOST}
         smtp-port: 1025
         smtp-secure-mode: none
-        smtp-user: null
-        smtp-password: null
+        smtp-user: ${SMTP_USER}
+        smtp-password: ${SMTP_PWD}
     web-applications:
         email-optional-for-login: false
     custom-links:
