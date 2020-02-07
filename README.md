@@ -68,3 +68,4 @@ WAITFORIT_TIMEOUT is the value passed to wait-for-it.sh, for more information se
 
 ## Docker image as standalone
 The image itself provided does not have any config file in it so you will have to mount them in it.
+If you wish to integrate your config files to package the app and other services as containers, Dockerfiles are provided in the .docker repositories to do so :)
