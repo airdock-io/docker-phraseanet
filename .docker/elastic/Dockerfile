@@ -1,4 +1,4 @@
-FROM elastic:2.4-alpine
+FROM elasticsearch:2.4-alpine
 
 COPY entrypoint.sh /docker-entrypoint.d/docker-entrypoint.sh
 

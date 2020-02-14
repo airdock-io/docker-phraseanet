@@ -28,3 +28,10 @@ phraseanet_build:## Build phraseanet container locally
 phraseanet_purge_db:## Build phraseanet container locally
 	@echo "Purging DB"
 	@rm -rf .data
+
+test:## WIP
+	@docker run -v ${PWD}/Dockerfile:/Dockerfile -v ${PWD}/.dockerfilelintrc:/.dockerfilelintrc replicated/dockerfilelint /Dockerfile
+	@docker run -it --rm -v "${PWD}/Dockerfile":/Dockerfile:ro redcoolbeans/dockerlint 
+	@CI=true dive --ci-config=.dive.yaml airdock/phraseanet:latest
+	@container-structure-test test --image airdock/phraseanet:latest --config cst.yaml
+	@GOSS_SLEEP=20 dgoss run -p 9000:9000 -e WAITFORIT_TIMEOUT=5 airdock/phraseanet:latest

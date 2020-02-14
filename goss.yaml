@@ -4,13 +4,13 @@ process:
 file:
   /var/www/app/config/configuration.yml:
     exists: true
-    mode: "0777"
+    mode: "0644"
   /usr/local/bin/phrasea-entrypoint:
     exists: true
-    mode: "0775"
+    mode: "0755"
   /usr/local/bin/phrasea-init:
     exists: true
-    mode: "0775"
+    mode: "0755"
   /usr/local/bin/docker-php-entrypoint:
     exists: true
     mode: "0775"
