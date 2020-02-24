@@ -17,7 +17,7 @@ jobs:
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v "$(pwd)":"$(pwd)" \
         -w "$(pwd)" \
-        -e CI=true \
+        -e CI="true" \
         wagoodman/dive:latest --ci-config=.dive.yaml phraseanet:ci
       - docker run -it --rm \
         -v /var/run/docker.sock:/var/run/docker.sock \

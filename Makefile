@@ -34,4 +34,4 @@ test:## WIP
 	@docker run -it --rm -v "${PWD}/Dockerfile":/Dockerfile:ro redcoolbeans/dockerlint 
 	@CI=true dive --ci-config=.dive.yaml airdock/phraseanet:latest
 	@container-structure-test test --image airdock/phraseanet:latest --config cst.yaml
-	@GOSS_SLEEP=20 dgoss run -p 9000:9000 -e WAITFORIT_TIMEOUT=5 airdock/phraseanet:latest
+	@GOSS_SLEEP=20 GOSS_FILES_STRATEGY=cp dgoss run -p 9000:9000 -e WAITFORIT_TIMEOUT=5 airdock/phraseanet:latest
