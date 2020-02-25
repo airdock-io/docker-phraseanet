@@ -41,7 +41,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /var/www
-ENV PHRASEA_VERSION 4.0.11
+ENV PHRASEA_VERSION 4.1.0
 RUN git clone --branch ${PHRASEA_VERSION} https://github.com/alchemy-fr/Phraseanet.git app\
     && cd app \
     && chmod -R 777 logs cache config tmp www/custom datas
