@@ -11,6 +11,8 @@
 
 
 ![Phraseanet](https://www.phraseanet.com/wp-content/uploads/2016/05/phrasea-logo-PAYSAGE.jpg)
+
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/airdock-io/docker-phraseanet?sort=semver&style=flat-square)
 # docker-phraseanet
 A repository to use Phraseanet with Docker
 
