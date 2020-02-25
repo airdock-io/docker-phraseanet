@@ -13,24 +13,9 @@ jobs:
   - stage: Test Image
     script:
       - docker build --tag phraseanet:ci .
-      - docker run --rm -it \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        -v "$(pwd)":"$(pwd)" \
-        -w "$(pwd)" \
-        -e CI="true" \
-        wagoodman/dive:latest --ci-config=.dive.yaml phraseanet:ci
-      - docker run -it --rm \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        -v ${PWD}:/goss \
-        -w /goss \
-        -e GOSS_SLEEP=20 \
-        -e GOSS_FILES_STRATEGY=cp \
-        kiwicom/dgoss dgoss run -p 9000:9000 -e WAITFORIT_TIMEOUT=5 phraseanet:ci
-      - docker run -it --rm \
-        -v /var/run/docker.sock:/var/run/docker.sock \
-        -v ${PWD}:/test \
-        -w /test \
-        zemanlx/container-structure-test:v1.8.0-alpine test --image phraseanet:ci --config cst.yaml
+      - docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v "$(pwd)":"$(pwd)" -w "$(pwd)" -e CI="true" wagoodman/dive:latest --ci-config=.dive.yaml phraseanet:ci
+      - docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v ${PWD}:/goss -w /goss -e GOSS_SLEEP=20 -e GOSS_FILES_STRATEGY=cp kiwicom/dgoss dgoss run -p 9000:9000 -e WAITFORIT_TIMEOUT=5 phraseanet:ci
+      - docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v ${PWD}:/test -w /test zemanlx/container-structure-test:v1.8.0-alpine test --image phraseanet:ci --config cst.yaml
   # WIP : Docker slim verifications
   # - stage: Build Slim Image
   #   script: 
