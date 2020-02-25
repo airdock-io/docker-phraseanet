@@ -6,7 +6,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/airdock-io/docker-phraseanet.svg?style=flat-square)](https://GitHub.com/airdock-io/docker-phraseanet/issues/)
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/airdock-io/docker-phraseanet.svg?style=flat-square)](https://GitHub.com/airdock-io/docker-phraseanet/issues?q=is%3Aissue+is%3Aclosed)
-[![Travis Ci Status](https://img.shields.io/travis/airdock-io/docker-phraseanet?style=flat-square)](https://travis-ci.com/airdock-io/docker-phraseanet)
+[![Travis Ci Status](https://img.shields.io/travis/com/airdock-io/docker-phraseanet?style=flat-square)](https://travis-ci.com/airdock-io/docker-phraseanet)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://lbesson.mit-license.org/)
 
 
