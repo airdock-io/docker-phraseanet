@@ -7,10 +7,10 @@ file:
     mode: "0644"
   /usr/local/bin/phrasea-entrypoint:
     exists: true
-    mode: "0755"
+    mode: "0775"
   /usr/local/bin/phrasea-init:
     exists: true
-    mode: "0755"
+    mode: "0775"
   /usr/local/bin/docker-php-entrypoint:
     exists: true
     mode: "0775"
