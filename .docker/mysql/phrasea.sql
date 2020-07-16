@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : mysql
--- Généré le :  lun. 20 jan. 2020 à 10:40
--- Version du serveur :  10.4.11-MariaDB-1:10.4.11+maria~bionic
--- Version de PHP :  7.2.25
+-- Host: mysql
+-- Generation Time: Jul 02, 2020 at 02:01 PM
+-- Server version: 10.4.13-MariaDB-1:10.4.13+maria~focal
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `phrasea`
+-- Database: `phrasea`
 --
 CREATE DATABASE IF NOT EXISTS `phrasea` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `phrasea`;
@@ -27,7 +26,7 @@ USE `phrasea`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `AggregateTokens`
+-- Table structure for table `AggregateTokens`
 --
 
 CREATE TABLE IF NOT EXISTS `AggregateTokens` (
@@ -39,16 +38,16 @@ CREATE TABLE IF NOT EXISTS `AggregateTokens` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `AggregateTokens`
+-- Dumping data for table `AggregateTokens`
 --
 
 INSERT INTO `AggregateTokens` (`id`, `user_id`, `value`) VALUES
-(1, 1, 'h1laTmVY2k4t3wjUZv8ZmGTsA1AbplxM07M7AcCUSOzQSA85QOjz4vyV4dfN7SKU');
+(1, 1, 'O8Az11Vi2zEo4dcAjSanS1iDijhihtEo5KaG8WC4AyKpzZ5vLODTJ5dQdn1MhfKb');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ApiAccounts`
+-- Table structure for table `ApiAccounts`
 --
 
 CREATE TABLE IF NOT EXISTS `ApiAccounts` (
@@ -66,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `ApiAccounts` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ApiApplications`
+-- Table structure for table `ApiApplications`
 --
 
 CREATE TABLE IF NOT EXISTS `ApiApplications` (
@@ -91,18 +90,18 @@ CREATE TABLE IF NOT EXISTS `ApiApplications` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `ApiApplications`
+-- Dumping data for table `ApiApplications`
 --
 
 INSERT INTO `ApiApplications` (`id`, `creator_id`, `type`, `name`, `description`, `website`, `created`, `updated`, `client_id`, `client_secret`, `nonce`, `redirect_uri`, `activated`, `grant_password`, `webhook_url`) VALUES
-(1, NULL, 'desktop', 'phraseanet-navigator', '', 'http://www.phraseanet.com', '2020-01-16 09:14:11', '2020-01-16 09:14:11', '\\alchemy\\phraseanet\\id\\4f981093aebb66.06844599', '\\alchemy\\phraseanet\\secret\\4f9810d4b09799.51622662', 'atkUrYxxOS6Cg9pa4YPpPO4DhA/IIm2ruvyh4BA/6IyUR4wJT/AWPEGzqTzejJ6u', 'urn:ietf:wg:oauth:2.0:oob', 1, 1, NULL),
-(2, NULL, 'desktop', 'office-plugin', '', 'http://www.phraseanet.com', '2020-01-16 09:14:11', '2020-01-16 09:14:11', '\\alchemy\\phraseanet\\id\\999585175b5fbb6e140efbdfea86c561', '\\alchemy\\phraseanet\\secret\\6d53d0bc74e6c8c1a325541f71da1ea5', '/stAqU3ddgeOllYAnzFY7T4ByBx/6hqDxI5yI0R9ugxA+m7L98EKU3PvRwzlY4kB', 'urn:ietf:wg:oauth:2.0:oob', 1, 1, NULL),
-(3, NULL, 'desktop', 'adobe_cc-plugin', '', 'http://www.phraseanet.com', '2020-01-16 09:14:11', '2020-01-16 09:14:11', '\\alchemy\\phraseanet\\id\\YZWUTqNyq8ObG4b0o4sp7NX50ScudqiV', '\\alchemy\\phraseanet\\secret\\nEpZd3O6Mk2ijQWiXsm7wPNKnFrbv7MO', 'Ni2TQQAu+CvxqRWjYRUuOM5JVWKYdJ09Jtkg48zUJXgWYiGK1L6kyVfXgHlCisvA', 'urn:ietf:wg:oauth:2.0:oob', 1, 1, NULL);
+(1, NULL, 'desktop', 'phraseanet-navigator', '', 'http://www.phraseanet.com', '2020-07-02 15:38:37', '2020-07-02 15:38:37', '\\alchemy\\phraseanet\\id\\4f981093aebb66.06844599', '\\alchemy\\phraseanet\\secret\\4f9810d4b09799.51622662', 'iS5aif00setS1Cl2/PidyzgmaALKk26Ezuud2FrQHdRoiDKg5t0tUxvJIxRHv0av', 'urn:ietf:wg:oauth:2.0:oob', 1, 1, NULL),
+(2, NULL, 'desktop', 'office-plugin', '', 'http://www.phraseanet.com', '2020-07-02 15:38:37', '2020-07-02 15:38:37', '\\alchemy\\phraseanet\\id\\999585175b5fbb6e140efbdfea86c561', '\\alchemy\\phraseanet\\secret\\6d53d0bc74e6c8c1a325541f71da1ea5', 'vNQIbE4FpcqQe/K49ei3QJ0kWQYtCWyr1NqRIGXNMEUlRkZysPnsKbWbKb1OQ9R3', 'urn:ietf:wg:oauth:2.0:oob', 1, 1, NULL),
+(3, NULL, 'desktop', 'adobe_cc-plugin', '', 'http://www.phraseanet.com', '2020-07-02 15:38:37', '2020-07-02 15:38:37', '\\alchemy\\phraseanet\\id\\YZWUTqNyq8ObG4b0o4sp7NX50ScudqiV', '\\alchemy\\phraseanet\\secret\\nEpZd3O6Mk2ijQWiXsm7wPNKnFrbv7MO', 'xm8nu+WxTtrVFqvD67pANRJIGGDgkFmIRJ0n12Ylemov4HaCuh6tbTvx32X4Evvo', 'urn:ietf:wg:oauth:2.0:oob', 1, 1, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ApiLogs`
+-- Table structure for table `ApiLogs`
 --
 
 CREATE TABLE IF NOT EXISTS `ApiLogs` (
@@ -126,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `ApiLogs` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ApiOauthCodes`
+-- Table structure for table `ApiOauthCodes`
 --
 
 CREATE TABLE IF NOT EXISTS `ApiOauthCodes` (
@@ -144,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `ApiOauthCodes` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ApiOauthRefreshTokens`
+-- Table structure for table `ApiOauthRefreshTokens`
 --
 
 CREATE TABLE IF NOT EXISTS `ApiOauthRefreshTokens` (
@@ -161,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `ApiOauthRefreshTokens` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ApiOauthTokens`
+-- Table structure for table `ApiOauthTokens`
 --
 
 CREATE TABLE IF NOT EXISTS `ApiOauthTokens` (
@@ -181,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `ApiOauthTokens` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `AuthFailures`
+-- Table structure for table `AuthFailures`
 --
 
 CREATE TABLE IF NOT EXISTS `AuthFailures` (
@@ -196,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `AuthFailures` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `bas`
+-- Table structure for table `bas`
 --
 
 CREATE TABLE IF NOT EXISTS `bas` (
@@ -211,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `bas` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `bas`
+-- Dumping data for table `bas`
 --
 
 INSERT INTO `bas` (`base_id`, `ord`, `active`, `server_coll_id`, `aliases`, `sbas_id`) VALUES
@@ -220,7 +219,7 @@ INSERT INTO `bas` (`base_id`, `ord`, `active`, `server_coll_id`, `aliases`, `sba
 -- --------------------------------------------------------
 
 --
--- Structure de la table `BasketElements`
+-- Table structure for table `BasketElements`
 --
 
 CREATE TABLE IF NOT EXISTS `BasketElements` (
@@ -239,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `BasketElements` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Baskets`
+-- Table structure for table `Baskets`
 --
 
 CREATE TABLE IF NOT EXISTS `Baskets` (
@@ -258,16 +257,16 @@ CREATE TABLE IF NOT EXISTS `Baskets` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `Baskets`
+-- Dumping data for table `Baskets`
 --
 
 INSERT INTO `Baskets` (`id`, `user_id`, `pusher_id`, `name`, `description`, `is_read`, `archived`, `created`, `updated`) VALUES
-(1, 1, NULL, 'Default basket', NULL, 1, 0, '2020-01-16 10:46:04', '2020-01-16 11:21:33');
+(1, 1, NULL, 'Panier par défaut', NULL, 0, 0, '2020-07-02 15:51:06', '2020-07-02 15:51:06');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `basusr`
+-- Table structure for table `basusr`
 --
 
 CREATE TABLE IF NOT EXISTS `basusr` (
@@ -313,16 +312,16 @@ CREATE TABLE IF NOT EXISTS `basusr` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `basusr`
+-- Dumping data for table `basusr`
 --
 
 INSERT INTO `basusr` (`id`, `base_id`, `usr_id`, `canputinalbum`, `candwnldhd`, `candwnldsubdef`, `candwnldpreview`, `cancmd`, `canadmin`, `actif`, `canreport`, `canpush`, `creationdate`, `basusr_infousr`, `mask_and`, `mask_xor`, `restrict_dwnld`, `month_dwnld_max`, `remain_dwnld`, `time_limited`, `limited_from`, `limited_to`, `canaddrecord`, `order_master`, `canmodifrecord`, `candeleterecord`, `chgstatus`, `lastconn`, `imgtools`, `manage`, `modify_struct`, `bas_modify_struct`, `nowatermark`) VALUES
-(1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, '0000-00-00 00:00:00', '', 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 0, 1, 1, 1, '2020-01-16 08:14:01', 1, 1, 1, 0, 1);
+(1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, '0000-00-00 00:00:00', '', 0, 0, 0, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 0, 1, 1, 1, '2020-07-02 13:38:36', 1, 1, 1, 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `bridge_accounts`
+-- Table structure for table `bridge_accounts`
 --
 
 CREATE TABLE IF NOT EXISTS `bridge_accounts` (
@@ -342,7 +341,7 @@ CREATE TABLE IF NOT EXISTS `bridge_accounts` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `bridge_account_settings`
+-- Table structure for table `bridge_account_settings`
 --
 
 CREATE TABLE IF NOT EXISTS `bridge_account_settings` (
@@ -356,7 +355,7 @@ CREATE TABLE IF NOT EXISTS `bridge_account_settings` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `bridge_apis`
+-- Table structure for table `bridge_apis`
 --
 
 CREATE TABLE IF NOT EXISTS `bridge_apis` (
@@ -371,18 +370,18 @@ CREATE TABLE IF NOT EXISTS `bridge_apis` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `bridge_apis`
+-- Dumping data for table `bridge_apis`
 --
 
 INSERT INTO `bridge_apis` (`id`, `name`, `disable`, `disable_time`, `created_on`, `updated_on`) VALUES
-(1, 'youtube', 0, NULL, '2020-01-16 08:14:00', '2020-01-16 08:14:00'),
-(2, 'flickr', 0, NULL, '2020-01-16 08:14:00', '2020-01-16 08:14:00'),
-(3, 'dailymotion', 0, NULL, '2020-01-16 08:14:00', '2020-01-16 08:14:00');
+(1, 'youtube', 0, NULL, '2020-07-02 13:38:36', '2020-07-02 13:38:36'),
+(2, 'flickr', 0, NULL, '2020-07-02 13:38:36', '2020-07-02 13:38:36'),
+(3, 'dailymotion', 0, NULL, '2020-07-02 13:38:36', '2020-07-02 13:38:36');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `bridge_elements`
+-- Table structure for table `bridge_elements`
 --
 
 CREATE TABLE IF NOT EXISTS `bridge_elements` (
@@ -409,27 +408,7 @@ CREATE TABLE IF NOT EXISTS `bridge_elements` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cache`
---
-
-CREATE TABLE IF NOT EXISTS `cache` (
-  `session_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `usr_id` int(11) UNSIGNED NOT NULL,
-  `nact` int(11) UNSIGNED NOT NULL DEFAULT 0,
-  `created_on` timestamp NOT NULL DEFAULT current_timestamp(),
-  `lastaccess` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `session` longblob NOT NULL,
-  `query` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `query_time` datetime NOT NULL,
-  `duration` float NOT NULL,
-  `total` int(11) UNSIGNED NOT NULL,
-  PRIMARY KEY (`session_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `demand`
+-- Table structure for table `demand`
 --
 
 CREATE TABLE IF NOT EXISTS `demand` (
@@ -444,7 +423,7 @@ CREATE TABLE IF NOT EXISTS `demand` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `dsel`
+-- Table structure for table `dsel`
 --
 
 CREATE TABLE IF NOT EXISTS `dsel` (
@@ -460,7 +439,7 @@ CREATE TABLE IF NOT EXISTS `dsel` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `edit_presets`
+-- Table structure for table `edit_presets`
 --
 
 CREATE TABLE IF NOT EXISTS `edit_presets` (
@@ -478,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `edit_presets` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `FeedEntries`
+-- Table structure for table `FeedEntries`
 --
 
 CREATE TABLE IF NOT EXISTS `FeedEntries` (
@@ -499,7 +478,7 @@ CREATE TABLE IF NOT EXISTS `FeedEntries` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `FeedItems`
+-- Table structure for table `FeedItems`
 --
 
 CREATE TABLE IF NOT EXISTS `FeedItems` (
@@ -518,7 +497,7 @@ CREATE TABLE IF NOT EXISTS `FeedItems` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `FeedPublishers`
+-- Table structure for table `FeedPublishers`
 --
 
 CREATE TABLE IF NOT EXISTS `FeedPublishers` (
@@ -535,7 +514,7 @@ CREATE TABLE IF NOT EXISTS `FeedPublishers` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Feeds`
+-- Table structure for table `Feeds`
 --
 
 CREATE TABLE IF NOT EXISTS `Feeds` (
@@ -553,7 +532,7 @@ CREATE TABLE IF NOT EXISTS `Feeds` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `FeedTokens`
+-- Table structure for table `FeedTokens`
 --
 
 CREATE TABLE IF NOT EXISTS `FeedTokens` (
@@ -569,7 +548,7 @@ CREATE TABLE IF NOT EXISTS `FeedTokens` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `FtpCredential`
+-- Table structure for table `FtpCredential`
 --
 
 CREATE TABLE IF NOT EXISTS `FtpCredential` (
@@ -592,7 +571,7 @@ CREATE TABLE IF NOT EXISTS `FtpCredential` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `FtpExportElements`
+-- Table structure for table `FtpExportElements`
 --
 
 CREATE TABLE IF NOT EXISTS `FtpExportElements` (
@@ -618,7 +597,7 @@ CREATE TABLE IF NOT EXISTS `FtpExportElements` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `FtpExports`
+-- Table structure for table `FtpExports`
 --
 
 CREATE TABLE IF NOT EXISTS `FtpExports` (
@@ -647,7 +626,7 @@ CREATE TABLE IF NOT EXISTS `FtpExports` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `LazaretAttributes`
+-- Table structure for table `LazaretAttributes`
 --
 
 CREATE TABLE IF NOT EXISTS `LazaretAttributes` (
@@ -664,7 +643,7 @@ CREATE TABLE IF NOT EXISTS `LazaretAttributes` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `LazaretChecks`
+-- Table structure for table `LazaretChecks`
 --
 
 CREATE TABLE IF NOT EXISTS `LazaretChecks` (
@@ -678,7 +657,7 @@ CREATE TABLE IF NOT EXISTS `LazaretChecks` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `LazaretFiles`
+-- Table structure for table `LazaretFiles`
 --
 
 CREATE TABLE IF NOT EXISTS `LazaretFiles` (
@@ -700,7 +679,7 @@ CREATE TABLE IF NOT EXISTS `LazaretFiles` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `LazaretSessions`
+-- Table structure for table `LazaretSessions`
 --
 
 CREATE TABLE IF NOT EXISTS `LazaretSessions` (
@@ -715,7 +694,7 @@ CREATE TABLE IF NOT EXISTS `LazaretSessions` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `notifications`
+-- Table structure for table `notifications`
 --
 
 CREATE TABLE IF NOT EXISTS `notifications` (
@@ -726,13 +705,16 @@ CREATE TABLE IF NOT EXISTS `notifications` (
   `mailed` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `datas` longblob NOT NULL,
   `created_on` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `usr_id` (`usr_id`),
+  KEY `unread` (`unread`),
+  KEY `created_on` (`created_on`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `OrderElements`
+-- Table structure for table `OrderElements`
 --
 
 CREATE TABLE IF NOT EXISTS `OrderElements` (
@@ -751,7 +733,7 @@ CREATE TABLE IF NOT EXISTS `OrderElements` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Orders`
+-- Table structure for table `Orders`
 --
 
 CREATE TABLE IF NOT EXISTS `Orders` (
@@ -771,7 +753,7 @@ CREATE TABLE IF NOT EXISTS `Orders` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Presets`
+-- Table structure for table `Presets`
 --
 
 CREATE TABLE IF NOT EXISTS `Presets` (
@@ -788,7 +770,7 @@ CREATE TABLE IF NOT EXISTS `Presets` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `records_rights`
+-- Table structure for table `records_rights`
 --
 
 CREATE TABLE IF NOT EXISTS `records_rights` (
@@ -814,7 +796,7 @@ CREATE TABLE IF NOT EXISTS `records_rights` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Registrations`
+-- Table structure for table `Registrations`
 --
 
 CREATE TABLE IF NOT EXISTS `Registrations` (
@@ -833,22 +815,7 @@ CREATE TABLE IF NOT EXISTS `Registrations` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `registry`
---
-
-CREATE TABLE IF NOT EXISTS `registry` (
-  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `key` char(32) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
-  `value` varchar(1024) COLLATE utf8_unicode_ci NOT NULL,
-  `type` enum('string','boolean','array','integer','text','binary','timezone','enum_multi','enum') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'string',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQUE` (`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `sbas`
+-- Table structure for table `sbas`
 --
 
 CREATE TABLE IF NOT EXISTS `sbas` (
@@ -871,7 +838,7 @@ CREATE TABLE IF NOT EXISTS `sbas` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `sbas`
+-- Dumping data for table `sbas`
 --
 
 INSERT INTO `sbas` (`sbas_id`, `ord`, `host`, `port`, `dbname`, `sqlengine`, `user`, `pwd`, `viewname`, `indexable`, `label_en`, `label_fr`, `label_de`, `label_nl`) VALUES
@@ -880,7 +847,7 @@ INSERT INTO `sbas` (`sbas_id`, `ord`, `host`, `port`, `dbname`, `sqlengine`, `us
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sbasusr`
+-- Table structure for table `sbasusr`
 --
 
 CREATE TABLE IF NOT EXISTS `sbasusr` (
@@ -896,7 +863,7 @@ CREATE TABLE IF NOT EXISTS `sbasusr` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `sbasusr`
+-- Dumping data for table `sbasusr`
 --
 
 INSERT INTO `sbasusr` (`sbasusr_id`, `sbas_id`, `usr_id`, `bas_manage`, `bas_modify_struct`, `bas_modif_th`, `bas_chupub`) VALUES
@@ -905,7 +872,7 @@ INSERT INTO `sbasusr` (`sbasusr_id`, `sbas_id`, `usr_id`, `bas_manage`, `bas_mod
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Secrets`
+-- Table structure for table `Secrets`
 --
 
 CREATE TABLE IF NOT EXISTS `Secrets` (
@@ -920,7 +887,7 @@ CREATE TABLE IF NOT EXISTS `Secrets` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `SessionModules`
+-- Table structure for table `SessionModules`
 --
 
 CREATE TABLE IF NOT EXISTS `SessionModules` (
@@ -932,21 +899,19 @@ CREATE TABLE IF NOT EXISTS `SessionModules` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_module` (`session_id`,`module_id`),
   KEY `IDX_BA36EF49613FECDF` (`session_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `SessionModules`
+-- Dumping data for table `SessionModules`
 --
 
 INSERT INTO `SessionModules` (`id`, `session_id`, `module_id`, `created`, `updated`) VALUES
-(1, 2, 1, '2020-01-16 10:46:03', '2020-01-16 11:24:53'),
-(2, 2, 5, '2020-01-16 11:20:31', '2020-01-16 11:20:31'),
-(3, 2, 3, '2020-01-16 11:21:35', '2020-01-16 11:22:19');
+(1, 1, 1, '2020-07-02 15:51:06', '2020-07-02 15:51:07');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Sessions`
+-- Table structure for table `Sessions`
 --
 
 CREATE TABLE IF NOT EXISTS `Sessions` (
@@ -966,20 +931,19 @@ CREATE TABLE IF NOT EXISTS `Sessions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_6316FF455F37A13B` (`token`),
   KEY `IDX_6316FF45A76ED395` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `Sessions`
+-- Dumping data for table `Sessions`
 --
 
 INSERT INTO `Sessions` (`id`, `user_id`, `user_agent`, `ip_address`, `platform`, `browser_name`, `browser_version`, `screen_width`, `screen_height`, `token`, `nonce`, `created`, `updated`) VALUES
-(1, 1, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) snap Chromium/79.0.3945.117 Chrome/79.0.3945.117 Safari/537.36', NULL, 'Linux', 'Chrome', '79.0.3945.117', NULL, NULL, NULL, NULL, '2020-01-16 09:14:11', '2020-01-16 09:14:11'),
-(2, 1, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) snap Chromium/79.0.3945.117 Chrome/79.0.3945.117 Safari/537.36', '172.21.0.1', 'Linux', 'Chrome', '79.0.3945.117', 1920, 1080, NULL, NULL, '2020-01-16 10:10:59', '2020-01-16 11:24:53');
+(1, 1, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36', '172.25.0.1', 'Linux', 'Chrome', '83.0.4103.106', NULL, NULL, NULL, NULL, '2020-07-02 15:51:06', '2020-07-02 15:51:07');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sitepreff`
+-- Table structure for table `sitepreff`
 --
 
 CREATE TABLE IF NOT EXISTS `sitepreff` (
@@ -996,16 +960,16 @@ CREATE TABLE IF NOT EXISTS `sitepreff` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `sitepreff`
+-- Dumping data for table `sitepreff`
 --
 
 INSERT INTO `sitepreff` (`id`, `preffs`, `version`, `maj`, `memcached_update`, `schedstatus`, `schedqtime`, `schedpid`, `schedulerkey`) VALUES
-(1, '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>                                <paramsite>                                    <statuschu>                                        <bit n=\"-1\" link=\"1\" order=\"0\" view=\"0\" label=\"\" wmprev=\"0\" thumbLimit=\"0\"/>                                    </statuschu>                                </paramsite>', '4.0.9', '0000-00-00 00:00:00', '2020-01-16 14:29:20', 'stopped', '0000-00-00 00:00:00', NULL, NULL);
+(1, '<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>                                <paramsite>                                    <statuschu>                                        <bit n=\"-1\" link=\"1\" order=\"0\" view=\"0\" label=\"\" wmprev=\"0\" thumbLimit=\"0\"/>                                    </statuschu>                                </paramsite>', '4.1.0-alpha.18a', '0000-00-00 00:00:00', '2020-07-02 13:51:07', 'stopped', '0000-00-00 00:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `StoryWZ`
+-- Table structure for table `StoryWZ`
 --
 
 CREATE TABLE IF NOT EXISTS `StoryWZ` (
@@ -1022,30 +986,7 @@ CREATE TABLE IF NOT EXISTS `StoryWZ` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `task2`
---
-
-CREATE TABLE IF NOT EXISTS `task2` (
-  `task_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `usr_id_owner` int(11) UNSIGNED NOT NULL DEFAULT 0,
-  `pid` int(11) UNSIGNED DEFAULT NULL,
-  `status` enum('stopped','started','starting','stopping','tostart','tostop','manual','torestart') CHARACTER SET ascii COLLATE ascii_bin NOT NULL DEFAULT 'stopped',
-  `crashed` int(2) UNSIGNED NOT NULL DEFAULT 0,
-  `active` int(1) UNSIGNED NOT NULL DEFAULT 0,
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `last_exec_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `class` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `settings` text COLLATE utf8_unicode_ci NOT NULL,
-  `todo` int(11) NOT NULL DEFAULT 0,
-  `done` int(11) NOT NULL DEFAULT 0,
-  `runner` char(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '-1',
-  PRIMARY KEY (`task_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `Tasks`
+-- Table structure for table `Tasks`
 --
 
 CREATE TABLE IF NOT EXISTS `Tasks` (
@@ -1065,17 +1006,17 @@ CREATE TABLE IF NOT EXISTS `Tasks` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `Tasks`
+-- Dumping data for table `Tasks`
 --
 
 INSERT INTO `Tasks` (`id`, `name`, `jobId`, `settings`, `completed`, `status`, `crashed`, `single_run`, `created`, `updated`, `last_execution`, `period`) VALUES
-(1, 'Subviews creation', 'Subdefs', '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<tasksettings>\n  <embedded>1</embedded>\n  <sbas/>\n  <type_image>1</type_image>\n  <type_video>1</type_video>\n  <type_audio>1</type_audio>\n  <type_document>1</type_document>\n  <type_flash>1</type_flash>\n  <type_unknown>1</type_unknown>\n  <flush>5</flush>\n  <maxrecs>20</maxrecs>\n  <maxmegs>256</maxmegs>\n  <maxduration>3600</maxduration>\n</tasksettings>', 0, 'started', 0, 0, '2020-01-16 09:14:01', '2020-01-16 09:14:01', NULL, 10),
-(2, 'Write metadatas', 'WriteMetadata', '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<tasksettings>\n    <cleardoc>0</cleardoc>\n    <mwg>0</mwg>\n</tasksettings>', 0, 'started', 0, 0, '2020-01-16 09:14:11', '2020-01-16 09:14:11', NULL, 10);
+(1, 'Subviews creation', 'Subdefs', '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<tasksettings>\n  <embedded>1</embedded>\n  <sbas>0</sbas>\n  <type_image>1</type_image>\n  <type_video>1</type_video>\n  <type_audio>1</type_audio>\n  <type_document>1</type_document>\n  <type_flash>1</type_flash>\n  <type_unknown>1</type_unknown>\n  <flush>5</flush>\n  <maxrecs>20</maxrecs>\n  <maxmegs>256</maxmegs>\n  <maxduration>3600</maxduration>\n</tasksettings>', 0, 'started', 0, 0, '2020-07-02 15:38:37', '2020-07-02 15:38:37', NULL, 10),
+(2, 'Write metadatas', 'WriteMetadata', '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<tasksettings>\n    <cleardoc>0</cleardoc>\n    <mwg>0</mwg>\n</tasksettings>', 0, 'started', 0, 0, '2020-07-02 15:38:37', '2020-07-02 15:38:37', NULL, 10);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Tokens`
+-- Table structure for table `Tokens`
 --
 
 CREATE TABLE IF NOT EXISTS `Tokens` (
@@ -1093,7 +1034,7 @@ CREATE TABLE IF NOT EXISTS `Tokens` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `UserNotificationSettings`
+-- Table structure for table `UserNotificationSettings`
 --
 
 CREATE TABLE IF NOT EXISTS `UserNotificationSettings` (
@@ -1111,7 +1052,7 @@ CREATE TABLE IF NOT EXISTS `UserNotificationSettings` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `UserQueries`
+-- Table structure for table `UserQueries`
 --
 
 CREATE TABLE IF NOT EXISTS `UserQueries` (
@@ -1121,20 +1062,19 @@ CREATE TABLE IF NOT EXISTS `UserQueries` (
   `created` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_5FB80D87A76ED395` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `UserQueries`
+-- Dumping data for table `UserQueries`
 --
 
 INSERT INTO `UserQueries` (`id`, `user_id`, `query`, `created`) VALUES
-(1, 1, '', '2020-01-16 10:46:06'),
-(2, 1, '', '2020-01-16 11:24:52');
+(1, 1, '', '2020-07-02 15:51:07');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Users`
+-- Table structure for table `Users`
 --
 
 CREATE TABLE IF NOT EXISTS `Users` (
@@ -1185,18 +1125,18 @@ CREATE TABLE IF NOT EXISTS `Users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Déchargement des données de la table `Users`
+-- Dumping data for table `Users`
 --
 
 INSERT INTO `Users` (`id`, `last_model`, `model_of`, `login`, `email`, `password`, `nonce`, `salted_password`, `first_name`, `last_name`, `gender`, `address`, `city`, `country`, `zip_code`, `geoname_id`, `locale`, `timezone`, `job`, `activity`, `company`, `phone`, `fax`, `admin`, `guest`, `mail_notifications`, `request_notifications`, `ldap_created`, `push_list`, `can_change_profil`, `can_change_ftp_profil`, `last_connection`, `mail_locked`, `deleted`, `created`, `updated`) VALUES
-(1, NULL, NULL, 'test@domain.name', 'test@domain.name', '9c067020471754e9133e706e0264b08f09420cf1d334745d780caa13d3433106234f87d0e895ca04a7d5cd511fd08003e8740c304171ccc57b5a55b4b8afd03c', '0pdch0EIdJX2wffFa0GJSMqVsIYmBuxld5cDeTUNpyF7oIUIoCUA7t5JYGqZPqVo', 1, '', '', NULL, '', '', '', '', NULL, 'en', '', '', '', '', '', '', 1, 0, 0, 0, 0, '', 1, 1, NULL, 0, 0, '2020-01-16 09:14:00', '2020-01-16 10:10:59'),
-(2, NULL, NULL, 'autoregister', NULL, '3545641d91bd0f51b973608444a3b7b5075899695bab54eaa612c12ee6005a7afce3f4cc2604f859836810c68506fe3ccc02595799a8236a6d34b86792fd65c3', 'uVBnZfiV8mmXnJm+uMMESLszaCFpSRTHYoO/rJ8Qi5/FuPRh2JaI/hqVVOd1E3Rl', 1, '', '', NULL, '', '', '', '', NULL, NULL, '', '', '', '', '', '', 0, 0, 0, 0, 0, '', 1, 1, NULL, 0, 0, '2020-01-16 09:14:00', '2020-01-16 09:14:00'),
-(3, NULL, NULL, 'guest', NULL, '69793e52a24a765aeba5c29d6b2f36593c31747f70853d8e2455271f8475d6221079590ec7faf3753d80e490e5f53b77f0b135089daa37a39fe6cf5e7d191a09', '2hR/C9unRjl+p6rZ/V9F17YjPGL5qELvu6n65tOy5mgfYDwRABvT0bnbg2tM8kYK', 1, '', '', NULL, '', '', '', '', NULL, NULL, '', '', '', '', '', '', 0, 0, 0, 0, 0, '', 1, 1, NULL, 0, 0, '2020-01-16 09:14:00', '2020-01-16 09:14:00');
+(1, NULL, NULL, 'test@domain.name', 'test@domain.name', '9c067020471754e9133e706e0264b08f09420cf1d334745d780caa13d3433106234f87d0e895ca04a7d5cd511fd08003e8740c304171ccc57b5a55b4b8afd03c', '0pdch0EIdJX2wffFa0GJSMqVsIYmBuxld5cDeTUNpyF7oIUIoCUA7t5JYGqZPqVo', 1, '', '', NULL, '', '', '', '', NULL, 'fr', '', '', '', '', '', '', 1, 0, 0, 0, 0, '', 1, 1, NULL, 0, 0, '2020-07-02 15:38:36', '2020-07-02 15:51:06'),
+(2, NULL, NULL, 'autoregister', NULL, '7f6b2ad52063ea735e38910372a996cd193b6f42f2cc7e2ca9ba8851e7f24d0652cdf0b9086116c5088c0c109beb6e6e58b5723995f9432a326754dfacae2b3a', 'j5LBs1e1MzNStjLlMIvsMlymbL4piRrIXkO3CfFSd7dT5AS6VAewHnSFbcVVKcWA', 1, '', '', NULL, '', '', '', '', NULL, NULL, '', '', '', '', '', '', 0, 0, 0, 0, 0, '', 1, 1, NULL, 0, 0, '2020-07-02 15:38:36', '2020-07-02 15:38:36'),
+(3, NULL, NULL, 'guest', NULL, 'd3a282de02b05e7e277d348e5f7d10adcf70538da2f608ef041063de37ff722512fa8581d732bef9a4766cb4ded284a21aeef97f009b360130cbe0dc71a2063c', 'sHGTk8j/V3lspu3XD5CB88qcjV2KUvFF/Hrh1d7nGTL6CbJiDYeHM53O68wQ8KWP', 1, '', '', NULL, '', '', '', '', NULL, NULL, '', '', '', '', '', '', 0, 0, 0, 0, 0, '', 1, 1, NULL, 0, 0, '2020-07-02 15:38:36', '2020-07-02 15:38:36');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `UserSettings`
+-- Table structure for table `UserSettings`
 --
 
 CREATE TABLE IF NOT EXISTS `UserSettings` (
@@ -1209,19 +1149,12 @@ CREATE TABLE IF NOT EXISTS `UserSettings` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_setting` (`user_id`,`name`),
   KEY `IDX_2847E61CA76ED395` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Déchargement des données de la table `UserSettings`
---
-
-INSERT INTO `UserSettings` (`id`, `user_id`, `name`, `value`, `created`, `updated`) VALUES
-(1, 1, 'search_window', '0.1875', '2020-01-16 11:38:14', '2020-01-16 11:38:14');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `UsrAuthProviders`
+-- Table structure for table `UsrAuthProviders`
 --
 
 CREATE TABLE IF NOT EXISTS `UsrAuthProviders` (
@@ -1240,7 +1173,7 @@ CREATE TABLE IF NOT EXISTS `UsrAuthProviders` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `UsrListOwners`
+-- Table structure for table `UsrListOwners`
 --
 
 CREATE TABLE IF NOT EXISTS `UsrListOwners` (
@@ -1259,7 +1192,7 @@ CREATE TABLE IF NOT EXISTS `UsrListOwners` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `UsrLists`
+-- Table structure for table `UsrLists`
 --
 
 CREATE TABLE IF NOT EXISTS `UsrLists` (
@@ -1273,7 +1206,7 @@ CREATE TABLE IF NOT EXISTS `UsrLists` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `UsrListsContent`
+-- Table structure for table `UsrListsContent`
 --
 
 CREATE TABLE IF NOT EXISTS `UsrListsContent` (
@@ -1291,7 +1224,7 @@ CREATE TABLE IF NOT EXISTS `UsrListsContent` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ValidationDatas`
+-- Table structure for table `ValidationDatas`
 --
 
 CREATE TABLE IF NOT EXISTS `ValidationDatas` (
@@ -1309,7 +1242,7 @@ CREATE TABLE IF NOT EXISTS `ValidationDatas` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ValidationParticipants`
+-- Table structure for table `ValidationParticipants`
 --
 
 CREATE TABLE IF NOT EXISTS `ValidationParticipants` (
@@ -1329,7 +1262,7 @@ CREATE TABLE IF NOT EXISTS `ValidationParticipants` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ValidationSessions`
+-- Table structure for table `ValidationSessions`
 --
 
 CREATE TABLE IF NOT EXISTS `ValidationSessions` (
@@ -1347,7 +1280,7 @@ CREATE TABLE IF NOT EXISTS `ValidationSessions` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `WebhookEventDeliveries`
+-- Table structure for table `WebhookEventDeliveries`
 --
 
 CREATE TABLE IF NOT EXISTS `WebhookEventDeliveries` (
@@ -1366,7 +1299,24 @@ CREATE TABLE IF NOT EXISTS `WebhookEventDeliveries` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `WebhookEvents`
+-- Table structure for table `WebhookEventPayloads`
+--
+
+CREATE TABLE IF NOT EXISTS `WebhookEventPayloads` (
+  `id` char(36) COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:guid)',
+  `delivery_id` int(11) DEFAULT NULL,
+  `request` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `response` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL,
+  `headers` longtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_B949629612136921` (`delivery_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `WebhookEvents`
 --
 
 CREATE TABLE IF NOT EXISTS `WebhookEvents` (
@@ -1381,262 +1331,268 @@ CREATE TABLE IF NOT EXISTS `WebhookEvents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `AggregateTokens`
+-- Constraints for table `AggregateTokens`
 --
 ALTER TABLE `AggregateTokens`
   ADD CONSTRAINT `FK_4232BC51A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `ApiAccounts`
+-- Constraints for table `ApiAccounts`
 --
 ALTER TABLE `ApiAccounts`
   ADD CONSTRAINT `FK_2C54E6373E030ACD` FOREIGN KEY (`application_id`) REFERENCES `ApiApplications` (`id`),
   ADD CONSTRAINT `FK_2C54E637A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `ApiApplications`
+-- Constraints for table `ApiApplications`
 --
 ALTER TABLE `ApiApplications`
   ADD CONSTRAINT `FK_53F7BBE661220EA6` FOREIGN KEY (`creator_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `ApiLogs`
+-- Constraints for table `ApiLogs`
 --
 ALTER TABLE `ApiLogs`
   ADD CONSTRAINT `FK_91E90F309B6B5FBA` FOREIGN KEY (`account_id`) REFERENCES `ApiAccounts` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `ApiOauthCodes`
+-- Constraints for table `ApiOauthCodes`
 --
 ALTER TABLE `ApiOauthCodes`
   ADD CONSTRAINT `FK_BE6B11809B6B5FBA` FOREIGN KEY (`account_id`) REFERENCES `ApiAccounts` (`id`);
 
 --
--- Contraintes pour la table `ApiOauthRefreshTokens`
+-- Constraints for table `ApiOauthRefreshTokens`
 --
 ALTER TABLE `ApiOauthRefreshTokens`
   ADD CONSTRAINT `FK_7DA42A5A9B6B5FBA` FOREIGN KEY (`account_id`) REFERENCES `ApiAccounts` (`id`);
 
 --
--- Contraintes pour la table `ApiOauthTokens`
+-- Constraints for table `ApiOauthTokens`
 --
 ALTER TABLE `ApiOauthTokens`
   ADD CONSTRAINT `FK_4FD469539B6B5FBA` FOREIGN KEY (`account_id`) REFERENCES `ApiAccounts` (`id`);
 
 --
--- Contraintes pour la table `BasketElements`
+-- Constraints for table `BasketElements`
 --
 ALTER TABLE `BasketElements`
   ADD CONSTRAINT `FK_C0B7ECB71BE1FB52` FOREIGN KEY (`basket_id`) REFERENCES `Baskets` (`id`);
 
 --
--- Contraintes pour la table `Baskets`
+-- Constraints for table `Baskets`
 --
 ALTER TABLE `Baskets`
   ADD CONSTRAINT `FK_13461873A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`),
   ADD CONSTRAINT `FK_13461873C2D98306` FOREIGN KEY (`pusher_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `FeedEntries`
+-- Constraints for table `FeedEntries`
 --
 ALTER TABLE `FeedEntries`
   ADD CONSTRAINT `FK_5FC892F940C86FCE` FOREIGN KEY (`publisher_id`) REFERENCES `FeedPublishers` (`id`),
   ADD CONSTRAINT `FK_5FC892F951A5BC03` FOREIGN KEY (`feed_id`) REFERENCES `Feeds` (`id`);
 
 --
--- Contraintes pour la table `FeedItems`
+-- Constraints for table `FeedItems`
 --
 ALTER TABLE `FeedItems`
   ADD CONSTRAINT `FK_7F9CDFA6BA364942` FOREIGN KEY (`entry_id`) REFERENCES `FeedEntries` (`id`);
 
 --
--- Contraintes pour la table `FeedPublishers`
+-- Constraints for table `FeedPublishers`
 --
 ALTER TABLE `FeedPublishers`
   ADD CONSTRAINT `FK_31AFAB251A5BC03` FOREIGN KEY (`feed_id`) REFERENCES `Feeds` (`id`),
   ADD CONSTRAINT `FK_31AFAB2A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `FeedTokens`
+-- Constraints for table `FeedTokens`
 --
 ALTER TABLE `FeedTokens`
   ADD CONSTRAINT `FK_9D1CA84851A5BC03` FOREIGN KEY (`feed_id`) REFERENCES `Feeds` (`id`),
   ADD CONSTRAINT `FK_9D1CA848A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `FtpCredential`
+-- Constraints for table `FtpCredential`
 --
 ALTER TABLE `FtpCredential`
   ADD CONSTRAINT `FK_62DA9661A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `FtpExportElements`
+-- Constraints for table `FtpExportElements`
 --
 ALTER TABLE `FtpExportElements`
   ADD CONSTRAINT `FK_7BF0AE1264CDAF82` FOREIGN KEY (`export_id`) REFERENCES `FtpExports` (`id`);
 
 --
--- Contraintes pour la table `FtpExports`
+-- Constraints for table `FtpExports`
 --
 ALTER TABLE `FtpExports`
   ADD CONSTRAINT `FK_CFCEEE7AA76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `LazaretAttributes`
+-- Constraints for table `LazaretAttributes`
 --
 ALTER TABLE `LazaretAttributes`
   ADD CONSTRAINT `FK_5FF72F9B4CF84ADD` FOREIGN KEY (`lazaret_file_id`) REFERENCES `LazaretFiles` (`id`);
 
 --
--- Contraintes pour la table `LazaretChecks`
+-- Constraints for table `LazaretChecks`
 --
 ALTER TABLE `LazaretChecks`
   ADD CONSTRAINT `FK_CE873ED44CF84ADD` FOREIGN KEY (`lazaret_file_id`) REFERENCES `LazaretFiles` (`id`);
 
 --
--- Contraintes pour la table `LazaretFiles`
+-- Constraints for table `LazaretFiles`
 --
 ALTER TABLE `LazaretFiles`
   ADD CONSTRAINT `FK_D30BD768EE187C01` FOREIGN KEY (`lazaret_session_id`) REFERENCES `LazaretSessions` (`id`);
 
 --
--- Contraintes pour la table `LazaretSessions`
+-- Constraints for table `LazaretSessions`
 --
 ALTER TABLE `LazaretSessions`
   ADD CONSTRAINT `FK_40A81317A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `OrderElements`
+-- Constraints for table `OrderElements`
 --
 ALTER TABLE `OrderElements`
   ADD CONSTRAINT `FK_8C7066C88D9F6D38` FOREIGN KEY (`order_id`) REFERENCES `Orders` (`id`),
   ADD CONSTRAINT `FK_8C7066C8EE86B303` FOREIGN KEY (`order_master`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `Orders`
+-- Constraints for table `Orders`
 --
 ALTER TABLE `Orders`
   ADD CONSTRAINT `FK_E283F8D81BE1FB52` FOREIGN KEY (`basket_id`) REFERENCES `Baskets` (`id`),
   ADD CONSTRAINT `FK_E283F8D8A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `Presets`
+-- Constraints for table `Presets`
 --
 ALTER TABLE `Presets`
   ADD CONSTRAINT `FK_1C48F8F3A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `Registrations`
+-- Constraints for table `Registrations`
 --
 ALTER TABLE `Registrations`
   ADD CONSTRAINT `FK_E0A01A12A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `Secrets`
+-- Constraints for table `Secrets`
 --
 ALTER TABLE `Secrets`
   ADD CONSTRAINT `FK_48F428861220EA6` FOREIGN KEY (`creator_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `SessionModules`
+-- Constraints for table `SessionModules`
 --
 ALTER TABLE `SessionModules`
   ADD CONSTRAINT `FK_BA36EF49613FECDF` FOREIGN KEY (`session_id`) REFERENCES `Sessions` (`id`);
 
 --
--- Contraintes pour la table `Sessions`
+-- Constraints for table `Sessions`
 --
 ALTER TABLE `Sessions`
   ADD CONSTRAINT `FK_6316FF45A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `StoryWZ`
+-- Constraints for table `StoryWZ`
 --
 ALTER TABLE `StoryWZ`
   ADD CONSTRAINT `FK_E0D2CBAEA76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `Tokens`
+-- Constraints for table `Tokens`
 --
 ALTER TABLE `Tokens`
   ADD CONSTRAINT `FK_ADF614B8A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `UserNotificationSettings`
+-- Constraints for table `UserNotificationSettings`
 --
 ALTER TABLE `UserNotificationSettings`
   ADD CONSTRAINT `FK_CFF041AAA76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `UserQueries`
+-- Constraints for table `UserQueries`
 --
 ALTER TABLE `UserQueries`
   ADD CONSTRAINT `FK_5FB80D87A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `Users`
+-- Constraints for table `Users`
 --
 ALTER TABLE `Users`
   ADD CONSTRAINT `FK_D5428AEDB5DE44C2` FOREIGN KEY (`last_model`) REFERENCES `Users` (`id`),
   ADD CONSTRAINT `FK_D5428AEDC121714D` FOREIGN KEY (`model_of`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `UserSettings`
+-- Constraints for table `UserSettings`
 --
 ALTER TABLE `UserSettings`
   ADD CONSTRAINT `FK_2847E61CA76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `UsrAuthProviders`
+-- Constraints for table `UsrAuthProviders`
 --
 ALTER TABLE `UsrAuthProviders`
   ADD CONSTRAINT `FK_947F003FA76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `UsrListOwners`
+-- Constraints for table `UsrListOwners`
 --
 ALTER TABLE `UsrListOwners`
   ADD CONSTRAINT `FK_54E9FE233DAE168B` FOREIGN KEY (`list_id`) REFERENCES `UsrLists` (`id`),
   ADD CONSTRAINT `FK_54E9FE23A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `UsrListsContent`
+-- Constraints for table `UsrListsContent`
 --
 ALTER TABLE `UsrListsContent`
   ADD CONSTRAINT `FK_661B8B93DAE168B` FOREIGN KEY (`list_id`) REFERENCES `UsrLists` (`id`),
   ADD CONSTRAINT `FK_661B8B9A76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `ValidationDatas`
+-- Constraints for table `ValidationDatas`
 --
 ALTER TABLE `ValidationDatas`
   ADD CONSTRAINT `FK_70E84DDC9D1C3019` FOREIGN KEY (`participant_id`) REFERENCES `ValidationParticipants` (`id`),
   ADD CONSTRAINT `FK_70E84DDCE989605` FOREIGN KEY (`basket_element_id`) REFERENCES `BasketElements` (`id`);
 
 --
--- Contraintes pour la table `ValidationParticipants`
+-- Constraints for table `ValidationParticipants`
 --
 ALTER TABLE `ValidationParticipants`
   ADD CONSTRAINT `FK_17850D7BA76ED395` FOREIGN KEY (`user_id`) REFERENCES `Users` (`id`),
   ADD CONSTRAINT `FK_17850D7BF9669572` FOREIGN KEY (`validation_session_id`) REFERENCES `ValidationSessions` (`id`);
 
 --
--- Contraintes pour la table `ValidationSessions`
+-- Constraints for table `ValidationSessions`
 --
 ALTER TABLE `ValidationSessions`
   ADD CONSTRAINT `FK_5B9DFB061BE1FB52` FOREIGN KEY (`basket_id`) REFERENCES `Baskets` (`id`),
   ADD CONSTRAINT `FK_5B9DFB067DB3B714` FOREIGN KEY (`initiator_id`) REFERENCES `Users` (`id`);
 
 --
--- Contraintes pour la table `WebhookEventDeliveries`
+-- Constraints for table `WebhookEventDeliveries`
 --
 ALTER TABLE `WebhookEventDeliveries`
   ADD CONSTRAINT `FK_B4A8823A3E030ACD` FOREIGN KEY (`application_id`) REFERENCES `ApiApplications` (`id`),
   ADD CONSTRAINT `FK_B4A8823A71F7E88B` FOREIGN KEY (`event_id`) REFERENCES `WebhookEvents` (`id`);
+
+--
+-- Constraints for table `WebhookEventPayloads`
+--
+ALTER TABLE `WebhookEventPayloads`
+  ADD CONSTRAINT `FK_B949629612136921` FOREIGN KEY (`delivery_id`) REFERENCES `WebhookEventDeliveries` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

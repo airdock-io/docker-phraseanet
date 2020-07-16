@@ -5,15 +5,27 @@ services:
   nginx:
     image: nginx:alpine
     links:
-      - php
+      - php_web
+      - php_worker
     volumes:
       - phraseanet:/var/www/app
       - ${PWD}/.docker/nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
 
-  php:
+  php_web:
     image: airdock/phraseanet:latest
+    volumes:
+      - phraseanet:/var/www/app
+      - ${PWD}/.docker/php/phrasea.ini:/usr/local/etc/php/conf.d/phrasea.ini
+      - ${PWD}/.docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    depends_on:
+      - mysql
+  
+  php_worker:
+    image: airdock/phraseanet:latest
+    environment:
+      RUN_AS_WORKER: "true"
     volumes:
       - phraseanet:/var/www/app
       - ${PWD}/.docker/php/phrasea.ini:/usr/local/etc/php/conf.d/phrasea.ini
@@ -33,6 +45,8 @@ services:
       MYSQL_DATABASE: phraseanet
       MYSQL_USER: canal
       MYSQL_PASSWORD: canal
+    ports:
+      - 3306:3306
 
   mysql_admin:
     image: phpmyadmin/phpmyadmin:latest

@@ -40,6 +40,7 @@ export MYSQL_DB_NAME=${MYSQL_DB_NAME:=phrasea}
 export SMTP_HOST=${SMTP_HOST:=smtp}
 export SMTP_USER=${SMTP_USER:=null}
 export SMTP_PWD=${SMTP_PWD:=null}
+export RUN_AS_WORKER=${RUN_AS_WORKER:=false}
 envsubst < "/var/www/app/config/configuration.sample.yml" > "/var/www/app/config/configuration.yml"
 
 
